@@ -14,11 +14,11 @@ class ElfCalorieHash
       .to_h
   end
 
-  def each(&block)
-    @elf_calorie_hash.each(&block)
+  def max_calories(num_of_elves)
+    take(num_of_elves).sum(&:last)
   end
 
-  def highest_total_calories(elves = 1)
-    take(elves).sum(&:last)
+  def each(&block)
+    @elf_calorie_hash.each(&block)
   end
 end
