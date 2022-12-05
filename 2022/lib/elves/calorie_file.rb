@@ -1,4 +1,6 @@
 class Elves::CalorieFile
+  autoload :Elf, File.expand_path('./calorie_file/elf.rb', __dir__)
+
   attr_reader :path
 
   def initialize(path)
@@ -16,7 +18,7 @@ class Elves::CalorieFile
   end
 
   def elves
-    @elves ||= lines.chunk_while { |_, next_line| !next_line.empty? }.collect { |calories| Elves::Elf.new(calories) }
+    @elves ||= lines.chunk_while { |_, next_line| !next_line.empty? }.collect { |calories| Elf.new(calories) }
   end
 
   def lines

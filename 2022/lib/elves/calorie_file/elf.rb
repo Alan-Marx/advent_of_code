@@ -1,4 +1,4 @@
-class Elves::Elf
+class Elves::CalorieFile::Elf
   attr_reader :calories
 
   def initialize(calories)
