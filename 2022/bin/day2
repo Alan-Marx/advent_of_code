@@ -3,6 +3,6 @@ require 'pry'
 require_relative '../lib/rock_paper_scissors'
 
 path = File.expand_path("../data/rock_paper_scissors_game.txt", __dir__)
-rock_paper_scissor_game = RockPaperScissors::Game.new(path)
+rock_paper_scissors_game = RockPaperScissors::Game.new(path)
 
-puts "Following the strategy guide would give you a predicted total score of #{rock_paper_scissor_game.score}"
+puts "Following the strategy guide would give you a predicted total score of #{rock_paper_scissors_game.score}"
