@@ -22,6 +22,6 @@ class ElfCalorieFile
   end
 
   def lines
-    @lines ||= File.readlines(path).collect(&:chomp)
+    @lines ||= File.readlines(path, chomp: true)
   end
 end
