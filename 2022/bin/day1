@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 require_relative '../lib/elf_calorie_file'
-require_relative '../lib/elf_calorie_hash'
+require_relative '../lib/elf_calorie_summary'
 
 elf_calorie_file = ElfCalorieFile.new(File.expand_path("../data/elf_calorie_file.txt", __dir__))
-elf_calorie_hash = ElfCalorieHash.new(elf_calorie_file)
+elf_calorie_summary = ElfCalorieSummary.new(elf_calorie_file)
 
-puts "The elf with the highest calories has #{elf_calorie_hash.max_calories(1)} total calories"
-puts "The 3 elves with the highest calories have #{elf_calorie_hash.max_calories(3)} total calories"
+puts "The elf with the highest calories has #{elf_calorie_summary.max_calories(1)} total calories"
+puts "The 3 elves with the highest calories have #{elf_calorie_summary.max_calories(3)} total calories"
