@@ -1,5 +1,3 @@
-require 'pry'
-
 class ElfCalorieHash
   include Enumerable
 
