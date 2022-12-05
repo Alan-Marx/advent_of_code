@@ -1,8 +1,7 @@
 class Elf
-  attr_reader :number, :calories
+  attr_reader :calories
 
-  def initialize(number, calories)
-    @number = number
+  def initialize(calories)
     @calories = calories.collect(&:to_i)
   end
 

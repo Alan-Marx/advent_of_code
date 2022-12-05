@@ -18,7 +18,7 @@ class ElfCalorieFile
   end
 
   def elves
-    @elves ||= lines.chunk_while { |_, next_line| !next_line.empty? }.collect.with_index(1) { |calories, number| Elf.new(number, calories) }
+    @elves ||= lines.chunk_while { |_, next_line| !next_line.empty? }.collect { |calories| Elf.new(calories) }
   end
 
   def lines
