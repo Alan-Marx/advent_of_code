@@ -1,6 +1,4 @@
-require_relative './elf'
-
-class ElfCalorieFile
+class Elves::CalorieFile
   attr_reader :path
 
   def initialize(path)
@@ -18,7 +16,7 @@ class ElfCalorieFile
   end
 
   def elves
-    @elves ||= lines.chunk_while { |_, next_line| !next_line.empty? }.collect { |calories| Elf.new(calories) }
+    @elves ||= lines.chunk_while { |_, next_line| !next_line.empty? }.collect { |calories| Elves::Elf.new(calories) }
   end
 
   def lines

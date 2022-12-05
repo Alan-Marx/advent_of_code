@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
-require_relative '../lib/elf_calorie_file'
+require_relative '../lib/elves'
 
-path = File.expand_path("../data/elf_calorie_file.txt", __dir__)
-elf_calorie_file = ElfCalorieFile.new(path)
+path = File.expand_path("../data/elf_calories.txt", __dir__)
+elves_calorie_file = Elves::CalorieFile.new(path)
 
-puts "The elf with the highest calories has #{elf_calorie_file.max_calories(1)} total calories"
-puts "The 3 elves with the highest calories have #{elf_calorie_file.max_calories(3)} total calories"
+puts "The elf with the highest calories has #{elves_calorie_file.max_calories(1)} total calories"
+puts "The 3 elves with the highest calories have #{elves_calorie_file.max_calories(3)} total calories"
