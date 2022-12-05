@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require_relative '../lib/elf_calorie_file'
+require_relative '../lib/elf_calorie_hash'
+
+elf_calorie_file = ElfCalorieFile.new(File.expand_path("../data/elf_calorie_file.txt", __dir__))
+elf_calorie_hash = ElfCalorieHash.new(elf_calorie_file)
+
+puts elf_calorie_hash.max_by(&:last).last
