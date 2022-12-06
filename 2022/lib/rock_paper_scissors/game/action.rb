@@ -24,7 +24,7 @@ class RockPaperScissors::Game::Action
   end
 
   def beats?(action)
-    BEATS.fetch(type) == action
+    BEATS.fetch(type) == action.type
   end
 
   def draws?(action)
