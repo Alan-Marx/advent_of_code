@@ -2,7 +2,10 @@
 require 'pry'
 require_relative '../lib/rock_paper_scissors'
 
-path = File.expand_path("../data/rock_paper_scissors_game.txt", __dir__)
-rock_paper_scissors_game = RockPaperScissors::Game.new(path)
+path = File.expand_path("../data/rock_paper_scissors_strategy.txt", __dir__)
 
-puts "Following the strategy guide would give you a predicted total score of #{rock_paper_scissors_game.score}"
+rock_paper_scissors_game = RockPaperScissors::Game.new(path, RockPaperScissors::Game::Strategy::Actions)
+puts "Interpreting the strategy guide in an action-oriented fashion would predict a total scsore of #{rock_paper_scissors_game.score}"
+
+rock_paper_scissors_game = RockPaperScissors::Game.new(path, RockPaperScissors::Game::Strategy::Results)
+puts "Interpreting the strategy guide in an result-oriented fashion would predict a total scsore of #{rock_paper_scissors_game.score}"

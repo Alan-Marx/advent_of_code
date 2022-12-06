@@ -1,9 +1,8 @@
 class RockPaperScissors::Game::Round
   attr_reader :opponent_action, :action
 
-  def initialize(opponent_action, action)
-    @opponent_action = opponent_action
-    @action = action
+  def initialize(actions)
+    @opponent_action, @action = actions
   end
 
   def score

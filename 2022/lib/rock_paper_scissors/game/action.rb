@@ -28,9 +28,9 @@ class RockPaperScissors::Game::Action
   def type
     @type ||=
       case letter
-      when 'A', 'X' then :rock
-      when 'B', 'Y' then :paper
-      when 'C', 'Z' then :scissor
+      when 'A' then :rock
+      when 'B' then :paper
+      when 'C' then :scissor
       end
   end
 end
