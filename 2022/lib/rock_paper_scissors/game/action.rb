@@ -1,16 +1,30 @@
 class RockPaperScissors::Game::Action
-  attr_reader :letter
+  TYPE = {
+    'A' => :rock,
+    'B' => :paper,
+    'C' => :scissor
+  }.freeze
+
+  SCORE = {
+    rock: 1,
+    paper: 2,
+    scissor: 3
+  }.freeze
+
+  BEATS = {
+    rock: :scissor,
+    paper: :rock,
+    scissor: :paper
+  }.freeze
+
+  attr_reader :type
 
   def initialize(letter)
-    @letter = letter
+    @type = TYPE.fetch(letter)
   end
 
   def beats?(action)
-    case type
-    when :rock then action.type == :scissor
-    when :paper then action.type == :rock
-    when :scissor then action.type == :paper
-    end
+    BEATS.fetch(type) == action
   end
 
   def draws?(action)
@@ -18,19 +32,6 @@ class RockPaperScissors::Game::Action
   end
 
   def score
-    case type
-    when :rock then 1
-    when :paper then 2
-    when :scissor then 3
-    end
-  end
-
-  def type
-    @type ||=
-      case letter
-      when 'A' then :rock
-      when 'B' then :paper
-      when 'C' then :scissor
-      end
+    SCORE.fetch(type)
   end
 end
