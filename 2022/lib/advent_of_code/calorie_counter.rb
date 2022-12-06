@@ -1,4 +1,8 @@
-class AdventOfCode::File::Calories < AdventOfCode::File
+class AdventOfCode::CalorieCounter
+  def initialize(calorie_file)
+    @calorie_file = calorie_file
+  end
+
   def sum_of_grouped_calorie_totals(num_of_groups)
     sorted_grouped_calorie_totals.take(num_of_groups).sum
   end
@@ -14,6 +18,6 @@ class AdventOfCode::File::Calories < AdventOfCode::File
   end
 
   def grouped_calories
-    each.chunk_while { |_group, next_line| !next_line.empty? }
+    @calorie_file.each.chunk_while { |_group, next_line| !next_line.empty? }
   end
 end

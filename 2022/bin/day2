@@ -1,11 +1,12 @@
 #!/usr/bin/env ruby
 require 'pry'
-require_relative '../lib/rock_paper_scissors'
+require_relative '../lib/advent_of_code'
 
 path = File.expand_path("../data/rock_paper_scissors_strategy.txt", __dir__)
+strategy_file = AdventOfCode::File.new(path)
 
-rock_paper_scissors_game = RockPaperScissors::Game.new(path, RockPaperScissors::Game::Strategy::Actions)
-puts "Interpreting the strategy guide in an action-oriented fashion would predict a total scsore of #{rock_paper_scissors_game.score}"
+action_strategy_parser = AdventOfCode::RockPaperScissors::StrategyParser::Action.new(strategy_file)
+puts "Interpreting the strategy file in an action-oriented fashion would predict a total score of #{action_strategy_parser.predicted_score}"
 
-rock_paper_scissors_game = RockPaperScissors::Game.new(path, RockPaperScissors::Game::Strategy::Results)
-puts "Interpreting the strategy guide in an result-oriented fashion would predict a total scsore of #{rock_paper_scissors_game.score}"
+result_strategy_parser = AdventOfCode::RockPaperScissors::StrategyParser::Result.new(strategy_file)
+puts "Interpreting the strategy file in an result-oriented fashion would predict a total score of #{result_strategy_parser.predicted_score}"
