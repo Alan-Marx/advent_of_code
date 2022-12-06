@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require 'pry'
+require_relative '../lib/rucksacks'
+
+path = File.expand_path("../data/rucksacks.txt", __dir__)
+
+rucksack_file = Rucksacks::File.new(path)
+puts "The sum of the prioirty scores of all duplicated items is #{rucksack_file.duplicated_item_priority_scores}"
