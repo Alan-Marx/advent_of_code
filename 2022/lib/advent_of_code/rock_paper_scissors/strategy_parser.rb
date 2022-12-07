@@ -13,7 +13,7 @@ class AdventOfCode::RockPaperScissors::StrategyParser
   private
 
   def rounds
-    @strategy_file.each.collect(&:split).collect do |symbols|
+    @strategy_file.collect(&:split).collect do |symbols|
       opponent_symbol, symbol = symbols
 
       opponent_action = parse_opponent_action(opponent_symbol, symbol)

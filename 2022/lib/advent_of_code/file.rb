@@ -2,10 +2,10 @@ class AdventOfCode::File
   include Enumerable
 
   def initialize(path)
-    @path = path
+    @file = File.readlines(path, chomp: true)
   end
 
   def each(&block)
-    File.readlines(@path, chomp: true, &block)
+    @file.each(&block)
   end
 end

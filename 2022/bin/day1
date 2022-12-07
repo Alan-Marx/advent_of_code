@@ -3,8 +3,7 @@ require 'pry'
 require_relative '../lib/advent_of_code'
 
 path = File.expand_path("../data/calories.txt", __dir__)
-calorie_file = AdventOfCode::File.new(path)
-calorie_counter = AdventOfCode::CalorieCounter.new(calorie_file)
+calorie_file = AdventOfCode::File::Calories.new(path)
 
-puts "The elf with the highest calories has #{calorie_counter.sum_of_grouped_calorie_totals(1)} total calories"
-puts "The 3 elves with the highest calories have #{calorie_counter.sum_of_grouped_calorie_totals(3)} total calories"
+puts "The elf with the highest calories has #{calorie_file.sum_of_grouped_calorie_totals(1)} total calories"
+puts "The 3 elves with the highest calories have #{calorie_file.sum_of_grouped_calorie_totals(3)} total calories"
