@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
 require 'pry'
-require_relative '../lib/rucksacks'
+require_relative '../lib/advent_of_code'
 
 path = File.expand_path("../data/rucksacks.txt", __dir__)
+rucksack_file = AdventOfCode::File.new(path)
 
-rucksack_file = Rucksacks::File.new(path)
-puts "The sum of the prioirty scores of all duplicated items is #{rucksack_file.duplicated_item_priority_scores}"
+rucksacks = AdventOfCode::Rucksacks.new(rucksack_file)
+
+puts "The sum of the priority scores of all duplicated items is #{rucksack_file.duplicated_item_priority_scores}"
